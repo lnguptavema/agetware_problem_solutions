@@ -1,0 +1,25 @@
+POST http://localhost:3000/api/v1/loans
+Content-Type: application/json
+
+{
+  "customer_id": "CUST005",
+  "loan_amount": 100000,
+  "loan_period_years": 5,
+  "interest_rate_yearly": 7.5
+}
+
+### Record a payment for a loan
+POST http://localhost:3000/loans/LOAN_1753504200500/payments
+Content-Type: application/json
+
+{
+  "amount": 5000,
+  "payment_type": "EMI"
+}
+
+### View full loan ledger
+GET http://localhost:3000/loans/LOAN_1753504200500/ledger
+
+### Get account overview for a customer
+GET http://localhost:3000/customers/CUST002/overview
+
